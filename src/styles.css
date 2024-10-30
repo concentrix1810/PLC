@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  width: 100%;
+  height: 100%;
+}
+
+.full-screen-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.copy-container {
+  position: relative; /* To position the icon relative to its container */
+}
+
+.copy-icon {
+  display: none; /* Initially hide the icon */
+  position: absolute; /* Position it absolutely within the container */
+  cursor: pointer;
+}
+
+.copy-container:hover .copy-icon {
+  display: inline; /* Show the icon on hover */
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  padding-left: 40px; /* Adjust this value to provide space for the icon */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.input-container .search-icon {
+  position: absolute;
+  left: 10px; /* Space from the left side */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for perfect centering */
+  font-size: 24px; /* Adjust the size of the icon */
+  color: #00804a; /* Set color for better visibility */
+  pointer-events: none; /* Ensure clicks on the icon go through to the input */
+}
+
+.search-container {
+  background-image: url("file:///C:/Users/nguye/Downloads/t%E1%BA%A3i%20xu%E1%BB%91ng.jfif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0; /* Stick to the top */
+  background-color: white; /* Ensure it stands out against the background */
+  z-index: 100; /* Make sure it stays on top of other elements */
+  padding: 10px; /* Optional: Add some padding for aesthetics */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+/* Fixed container for search bar and table header */
+.fixed-header-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Adjusting the search container */
+.search-container {
+  padding: 10px;
+  background-color: white;
+}
+
+/* Table header styling */
+.fixed-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  width: 500px;
+  padding: 10px 38px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.clear-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-results,
+.search-history {
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.result-item,
+.history-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.result-item:hover,
+.history-item:hover {
+  background-color: #44c424;
+  color: #fff;
+}
+
+/* Table Container */
+.table-container {
+  width: 100%;
+  height: 60%; /* Ensure this height is appropriate */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto; /* Enable scrolling */
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #333;
+  color: #fff;
+  position: sticky; /* Makes the header sticky */
+  top: 0; /* Position it at the top of its container */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
+
+th {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Updated hover styles for individual table cells */
+tbody td:hover {
+  background-color: #2bae66ff; /* Light green */
+  color: #ffffff; /* White */
+}
+
+/* Specific Header Styles */
+.header-son-soi {
+  background-color: #2bae66ff; /* Green */
+  color: #ffffff; /* White */
+}
+
+.header-top-disposition {
+  background-color: #2196f3; /* Blue */
+  color: #ffffff; /* White */
+}
+
+.header-problem {
+  background-color: #ff9800; /* Orange */
+  color: #ffffff; /* White */
+}
+
+.header-action {
+  background-color: #ff5722; /* Red */
+  color: #ffffff; /* White */
+}
+
+.header-root-cause {
+  background-color: #9c27b0; /* Purple */
+  color: #ffffff; /* White */
+}
+
+.header-remark {
+  background-color: #3f51b5; /* Indigo */
+  color: #ffffff; /* White */
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  background-color: #00804a; /* Change to your desired color */
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+  opacity: 0.8;
+}
+
+.scroll-to-top:hover {
+  opacity: 1; /* Make it fully visible on hover */
+}
+
+.header-son-soi {
+  position: relative; /* For better positioning of the dropdown */
+}
+
+.header-son-soi select {
+  padding: 6px; /* Padding inside the dropdown */
+  border: 1px solid #ccc; /* Border for the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff; /* Background color */
+  cursor: pointer; /* Change cursor on hover */
+  transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+.header-son-soi select:focus {
+  border-color: #00804a; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.header-son-soi label {
+  font-weight: bold; /* Bold label */
+  display: block; /* Make label block to stack above select */
+  margin-bottom: 5px; /* Space between label and dropdown */
+  color: #333; /* Text color for the label */
+}
+
+.header-son-soi div {
+  display: flex; /* Flexbox layout for better alignment */
+  flex-direction: column; /* Stack label and select vertically */
+  align-items: center; /* Center the items */
+}
+
+.typing-effect {
+  color: #fff;
+  text-align: center;
+  font-size: 33px;
+  margin-top: -100px;
+  margin-bottom: 20px;
+}
