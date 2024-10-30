@@ -306,3 +306,12 @@ tbody td:hover {
   cursor: pointer;
   margin-left: 10px;
 }
+
+.copy-right {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.copy-right p4 {
+  color: #00804a;
+}

@@ -406,6 +406,9 @@ const DeposionFB = () => {
           <AiOutlineUp />
         </div>
       )}
+      <div className="copy-right">
+        <p4>Copyright by CONCENTRIX ❤</p4>
+      </div>
     </div>
   );
 };
