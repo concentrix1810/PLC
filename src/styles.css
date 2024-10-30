@@ -291,3 +291,18 @@ tbody td:hover {
   margin-top: -100px;
   margin-bottom: 20px;
 }
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  margin-left: 10px;
+}
