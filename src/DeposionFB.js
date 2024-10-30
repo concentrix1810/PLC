@@ -56,8 +56,8 @@ const DeposionFB = () => {
       .writeText(text)
       .then(() => {
         toast.success(`Đã sao chép: "${text}"`, {
-          position: "bottom-right",
-          autoClose: 2000,
+          position: "top-left",
+          autoClose: 1000,
           hideProgressBar: true,
           style: customToastStyle,
         });
