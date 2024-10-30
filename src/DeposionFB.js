@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  AiOutlineCopy,
-  AiOutlineClose,
-  AiOutlineUp,
-  AiOutlineSearch,
-} from "react-icons/ai";
+import { AiOutlineClose, AiOutlineUp, AiOutlineSearch } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { data } from "./data";
