@@ -292,7 +292,6 @@ const DeposionFB = () => {
         )}
 
         <div className="display-mode-container">
-          <label htmlFor="display-mode-select">Chế độ hiển thị:</label>
           <select
             id="display-mode-select"
             value={displayMode}

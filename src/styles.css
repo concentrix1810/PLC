@@ -373,7 +373,7 @@ tbody td:hover {
   padding: 5px; /* Đệm cho ô chọn */
   border: 1px solid #00804a; /* Đường viền màu xanh */
   border-radius: 4px; /* Bo tròn các góc */
-  font-size: 16px; /* Kích thước chữ */
+  font-size: 12px; /* Kích thước chữ */
   cursor: pointer; /* Con trỏ chuột khi di chuột qua */
   transition: border-color 0.3s; /* Hiệu ứng chuyển tiếp cho đường viền */
 }
