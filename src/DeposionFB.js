@@ -17,17 +17,26 @@ const DeposionFB = () => {
   const [showHistory, setShowHistory] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [displayMode, setDisplayMode] = useState("full"); // State for display mode
   const [typingText, setTypingText] = useState(""); // State để quản lý nội dung gõ
   const fullText = "G Chúng tôi có thể giúp gì cho bạn?"; // Nội dung bạn muốn gõ
 
   useEffect(() => {
     const history = JSON.parse(localStorage.getItem("searchHistory")) || [];
     setSearchHistory(history);
+
+    // Load display mode from local storage
+    const mode = localStorage.getItem("displayMode") || "full";
+    setDisplayMode(mode);
   }, []);
 
   useEffect(() => {
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
   }, [searchHistory]);
+
+  useEffect(() => {
+    localStorage.setItem("displayMode", displayMode); // Save display mode to local storage
+  }, [displayMode]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +60,7 @@ const DeposionFB = () => {
 
     return () => clearInterval(typingInterval); // Dọn dẹp interval khi component unmount
   }, []);
+
   const handleCopy = (text) => {
     navigator.clipboard
       .writeText(text)
@@ -280,6 +290,18 @@ const DeposionFB = () => {
             ))}
           </div>
         )}
+
+        <div className="display-mode-container">
+          <label htmlFor="display-mode-select">Chế độ hiển thị:</label>
+          <select
+            id="display-mode-select"
+            value={displayMode}
+            onChange={(e) => setDisplayMode(e.target.value)}
+          >
+            <option value="full">Hiển thị Root Cause</option>
+            <option value="compact">Ẩn Root Cause</option>
+          </select>
+        </div>
       </div>
 
       <table border="1" cellPadding="10" cellSpacing="0">
@@ -323,15 +345,28 @@ const DeposionFB = () => {
             <th className="header-action" style={{ textAlign: "center" }}>
               Action L3
             </th>
-            <th className="header-root-cause" style={{ textAlign: "center" }}>
-              Root Cause L1
-            </th>
-            <th className="header-root-cause" style={{ textAlign: "center" }}>
-              Root Cause L2
-            </th>
-            <th className="header-root-cause" style={{ textAlign: "center" }}>
-              Root Cause L3
-            </th>
+            {displayMode === "full" && (
+              <>
+                <th
+                  className="header-root-cause"
+                  style={{ textAlign: "center" }}
+                >
+                  Root Cause L1
+                </th>
+                <th
+                  className="header-root-cause"
+                  style={{ textAlign: "center" }}
+                >
+                  Root Cause L2
+                </th>
+                <th
+                  className="header-root-cause"
+                  style={{ textAlign: "center" }}
+                >
+                  Root Cause L3
+                </th>
+              </>
+            )}
             <th className="header-remark" style={{ textAlign: "center" }}>
               Remark
             </th>
@@ -385,16 +420,17 @@ const DeposionFB = () => {
                     {action}
                   </td>
                 ))}
-                {detail.RootCauses.map((cause, causeIdx) => (
-                  <td
-                    key={causeIdx}
-                    onClick={() => handleCopy(cause)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    {cause}
-                  </td>
-                ))}
-                <td>{detail.Remark}</td> {/* Display Remark */}
+                {displayMode === "full" &&
+                  detail.RootCauses.map((cause, causeIdx) => (
+                    <td
+                      key={causeIdx}
+                      onClick={() => handleCopy(cause)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {cause}
+                    </td>
+                  ))}
+                <td>{detail.Remark}</td>
               </tr>
             ))
           )}
@@ -406,9 +442,6 @@ const DeposionFB = () => {
           <AiOutlineUp />
         </div>
       )}
-      <div className="copy-right">
-        <p4>Copyright by CONCENTRIX ❤</p4>
-      </div>
     </div>
   );
 };

@@ -63,7 +63,7 @@ export const data = {
       Details: [
         {
           Remark:
-            "- Đối tác TX phản ánh người dùng từ chối thanh toán\n- Đối tác TX báo ND hứa sẽ chuyển khoản cho Đối tác TX nhưng Đối tác TX vẫn chưa nhận được tiền. (Refuse to pay)",
+            "Đối tác TX báo ND từ chối thanh toán, mặc dù ND hứa sẽ chuyển khoản nhưng vẫn chưa nhận được tiền.",
           Actions: [
             "Request user to submit HC Form",
             "Contact Pax on behalf of user",

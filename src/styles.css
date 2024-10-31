@@ -181,7 +181,7 @@ td {
   padding-bottom: 10px;
   text-align: center;
   border: 1px solid #ddd;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 th {
@@ -292,21 +292,6 @@ tbody td:hover {
   margin-bottom: 20px;
 }
 
-.light-mode {
-  background-color: white;
-  color: black;
-}
-
-.dark-mode {
-  background-color: #333;
-  color: white;
-}
-
-.theme-toggle {
-  cursor: pointer;
-  margin-left: 10px;
-}
-
 .copy-right {
   display: flex;
   justify-content: center;
@@ -314,4 +299,90 @@ tbody td:hover {
 }
 .copy-right p4 {
   color: #00804a;
+}
+
+/* Tablets and Small Desktops */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .input-container input,
+  .search-results,
+  .search-history {
+    width: 90%;
+  }
+
+  .table-container {
+    height: 50%;
+  }
+
+  .search-container {
+    height: 200px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 767px) {
+  .input-container input {
+    width: 100%;
+    padding-left: 30px;
+  }
+  .search-results,
+  .search-history {
+    width: 100%;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td {
+    font-size: 12px;
+  }
+
+  .copy-right {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .scroll-to-top {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+.display-mode-container {
+  position: absolute; /* Đặt vị trí ở góc phải trên cùng */
+  top: 20px; /* Khoảng cách từ trên cùng */
+  right: 20px; /* Khoảng cách từ bên phải */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Nền màu trắng với độ trong suốt */
+  padding: 10px; /* Đệm xung quanh */
+  border-radius: 5px; /* Bo tròn các góc */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+  z-index: 10; /* Đảm bảo nằm trên các phần tử khác */
+}
+
+.display-mode-container label {
+  color: #005d3d;
+  font-weight: bold; /* Đậm chữ cho nhãn */
+  margin-right: 10px; /* Khoảng cách bên phải giữa nhãn và ô chọn */
+}
+
+.display-mode-container select {
+  padding: 5px; /* Đệm cho ô chọn */
+  border: 1px solid #00804a; /* Đường viền màu xanh */
+  border-radius: 4px; /* Bo tròn các góc */
+  font-size: 16px; /* Kích thước chữ */
+  cursor: pointer; /* Con trỏ chuột khi di chuột qua */
+  transition: border-color 0.3s; /* Hiệu ứng chuyển tiếp cho đường viền */
+}
+
+.display-mode-container select:focus {
+  outline: none; /* Loại bỏ đường viền mặc định khi ô chọn được focus */
+  border-color: #005d3d; /* Đổi màu đường viền khi được focus */
+}
+
+.display-mode-container select option {
+  padding: 10px; /* Đệm cho các tùy chọn trong ô chọn */
 }
