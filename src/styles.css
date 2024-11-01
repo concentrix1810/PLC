@@ -65,7 +65,7 @@ html {
   position: relative;
   width: 100%;
   justify-content: center;
-  height: 238px;
+  height: 260px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -107,7 +107,7 @@ html {
 
 .input-container input {
   width: 500px;
-  padding: 10px 38px;
+  padding: 8px 38px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
@@ -122,16 +122,60 @@ html {
   font-size: 16px;
 }
 
-.search-results,
 .search-history {
   width: 500px;
+  font-size: 12px;
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #ddd;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
-  max-height: 135px;
+  max-height: 154px;
   overflow-y: auto;
+}
+
+.search-results {
+  width: 500px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  max-height: 154px;
+  overflow-y: auto;
+}
+
+.search-results::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+  border-radius: 8px; /* Rounded scrollbar ends */
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background-color: #00804a; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+.search-results::-webkit-scrollbar-track {
+  border-radius: 8px; /* Rounded track */
+  border-radius: 4px; /* Rounded corners for the scrollbar track */
+}
+
+#category-select::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+  border-radius: 8px; /* Rounded scrollbar ends */
+}
+
+#category-select::-webkit-scrollbar-thumb {
+  background-color: #00804a; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+#category-select::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the scrollbar track */
+  border-radius: 8px; /* Rounded track */
+  border-radius: 4px; /* Rounded corners for the scrollbar track */
 }
 
 .result-item,
@@ -181,7 +225,7 @@ td {
   padding-bottom: 10px;
   text-align: center;
   border: 1px solid #ddd;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 th {
@@ -287,7 +331,7 @@ tbody td:hover {
 .typing-effect {
   color: #fff;
   text-align: center;
-  font-size: 33px;
+  font-size: 26px;
   margin-top: -100px;
   margin-bottom: 20px;
 }
@@ -297,8 +341,9 @@ tbody td:hover {
   justify-content: center;
   padding: 20px;
 }
-.copy-right p4 {
+.copy-right h4 {
   color: #00804a;
+  font-size: 1rem;
 }
 
 /* Tablets and Small Desktops */
@@ -357,7 +402,7 @@ tbody td:hover {
     255,
     0.8
   ); /* Nền màu trắng với độ trong suốt */
-  padding: 10px; /* Đệm xung quanh */
+  padding: 6px; /* Đệm xung quanh */
   border-radius: 5px; /* Bo tròn các góc */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
   z-index: 10; /* Đảm bảo nằm trên các phần tử khác */

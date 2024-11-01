@@ -8,6 +8,9 @@ import "./styles.css";
 const customToastStyle = {
   backgroundColor: "#00804a",
   color: "#fff",
+  padding: "6px", // Smaller padding
+  fontSize: "10px", // Smaller font size
+  borderRadius: "5px", // Adjust border radius if needed
 };
 
 const DeposionFB = () => {
@@ -19,7 +22,7 @@ const DeposionFB = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [displayMode, setDisplayMode] = useState("full"); // State for display mode
   const [typingText, setTypingText] = useState(""); // State để quản lý nội dung gõ
-  const fullText = "G Chúng tôi có thể giúp gì cho bạn?"; // Nội dung bạn muốn gõ
+  const fullText = "Chúng tôi có thể giúp gì cho bạn?"; // Nội dung bạn muốn gõ
 
   useEffect(() => {
     const history = JSON.parse(localStorage.getItem("searchHistory")) || [];
@@ -48,18 +51,18 @@ const DeposionFB = () => {
   }, []);
 
   useEffect(() => {
-    let index = 0; // Chỉ số của ký tự hiện tại
+    const indexRef = { current: 0 }; // Plain object to track index without triggering re-renders
     const typingInterval = setInterval(() => {
-      if (index < fullText.length) {
-        setTypingText((prev) => prev + fullText.charAt(index));
-        index++;
+      if (indexRef.current < fullText.length) {
+        setTypingText(fullText.slice(0, indexRef.current + 1)); // Update text based on index
+        indexRef.current += 1;
       } else {
-        clearInterval(typingInterval); // Dừng khi đã gõ xong
+        clearInterval(typingInterval); // Clear interval when typing is complete
       }
-    }, 100); // Thay đổi giá trị này để điều chỉnh tốc độ gõ
+    }, 100); // Adjust speed as needed
 
-    return () => clearInterval(typingInterval); // Dọn dẹp interval khi component unmount
-  }, []);
+    return () => clearInterval(typingInterval); // Clean up interval on unmount
+  }, [fullText]);
 
   const handleCopy = (text) => {
     navigator.clipboard
@@ -249,7 +252,7 @@ const DeposionFB = () => {
             <AiOutlineSearch className="search-icon" />
             <input
               type="text"
-              placeholder="Tìm kiếm theo Type & Remark"
+              placeholder="Tìm kiếm theo Top Disposition & Remark"
               value={searchTerm}
               onFocus={handleFocusInput}
               onBlur={handleBlurInput}
@@ -441,6 +444,10 @@ const DeposionFB = () => {
           <AiOutlineUp />
         </div>
       )}
+
+      <div className="copy-right">
+        <h4>Copyright by Team GFM ❤</h4>
+      </div>
     </div>
   );
 };

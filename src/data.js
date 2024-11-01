@@ -20,7 +20,7 @@ export const data = {
           RootCauses: [
             "User Behaviour",
             "Booking related issues (Non-fare related)",
-            "Pax not contactable when dax reached the delivery location/pick-up point",
+            "Pax not contactable when dax reached the delivery location/pick up point",
           ],
         },
         {
@@ -33,7 +33,7 @@ export const data = {
           RootCauses: [
             "User Behaviour",
             "Booking related issues (Non-fare related)",
-            "Pax not contactable when dax reached the delivery location/pick-up point",
+            "Pax not contactable when dax reached the delivery location/pick up point",
           ],
         },
         {
@@ -153,44 +153,6 @@ export const data = {
       ],
     },
     {
-      Category: "Enquiry", // Thêm trường Category
-      Type: "Reimbursement/Bonus",
-      ProblemLevels: {
-        ProblemL1: { Description: "Booking Support" },
-        ProblemL2: { Description: "R&A/Fares/Fees Dispute" },
-        ProblemL3: { Description: "Cleaning fee reimbursement" },
-      },
-      Details: [
-        {
-          Remark: "Dax nhờ hướng dẫn làm bồi hoàn do ND no show",
-          Actions: [
-            "Check booking/transaction details",
-            "Advise Dax on policy",
-            "Proceed with actions accordingly",
-          ],
-          RootCauses: [
-            "User Behaviour",
-            "Booking related issues (Non-fare related)",
-            "Pax not contactable when dax reached the delivery location/pick-up point",
-          ],
-        },
-        {
-          Remark:
-            "Dax thắc mắc về một yêu cầu bồi hoàn đã gửi trước đó đã quá SLA nhưng chưa được hỗ trợ",
-          Actions: [
-            "Check if specified time has exceeded",
-            "Advise Dax to wait for follow-up reply",
-            "Assign to driver support",
-          ],
-          RootCauses: [
-            "Indeterminable",
-            "No known reason",
-            "User did not receive an update after promised SLA",
-          ],
-        },
-      ],
-    },
-    {
       Category: "Enquiry", // Added field Category
       Type: "Enquiry::Reimbursement/Bonus",
       ProblemLevels: {
@@ -209,7 +171,7 @@ export const data = {
           RootCauses: [
             "User Behaviour",
             "Booking related issues (Non-fare related)",
-            "Pax not contactable when dax reached the delivery location/pick-up point",
+            "Pax not contactable when dax reached the delivery location/pick up point",
           ],
         },
         {
@@ -939,8 +901,8 @@ export const data = {
       Category: "Cancel", // Thêm trường Category
       Type: "Cancel::Cancel by mistake",
       ProblemLevels: {
-        ProblemL1: { Description: "Booking Changes" },
-        ProblemL2: { Description: "Cancel by Mistake" },
+        ProblemL1: { Description: "Booking Support" },
+        ProblemL2: { Description: "Booking Changes" },
         ProblemL3: { Description: "Request to undo cancellation" },
       },
       Details: [
@@ -950,7 +912,7 @@ export const data = {
           Actions: [
             "Check booking/transaction details",
             "Support Pax to cancel",
-            "Escalate to TM/TL",
+            "No further action taken L3",
           ],
           RootCauses: [
             "User Behaviour",
@@ -1218,7 +1180,7 @@ export const data = {
           Actions: [
             "Check booking/transaction details",
             "Advise Dax to wait for follow-up reply",
-            "Escalate to TM/TL",
+            "No further action taken L3",
           ],
           RootCauses: [
             "User Behaviour",
@@ -1244,7 +1206,7 @@ export const data = {
           Actions: [
             "Check booking/transaction details",
             "Contact Dax on behalf of user",
-            "Escalate to TM/TL",
+            "No further action taken L3",
           ],
           RootCauses: [
             "Risk/Quality",
@@ -1960,6 +1922,43 @@ export const data = {
       ],
     },
     {
+      Category: "Wallet",
+      Type: "Wallet::Cashout Cycle",
+      ProblemLevels: {
+        ProblemL1: { Description: "Payments & Wallet" },
+        ProblemL2: { Description: "Cash Out Issues" },
+        ProblemL3: { Description: "Update of cashout status" },
+      },
+      Details: [
+        {
+          Remark: "Rút tiền về ngân hàng không thành công",
+          Actions: [
+            "Probe for transaction details",
+            "Assign to payment dispute team",
+            "Verify cashout issue",
+          ],
+          RootCauses: [
+            "T&C (eligibility/policies)",
+            "Exceeded quota to use a certain feature/product",
+            "Exceeded withdrawal limit/amount",
+          ],
+        },
+        {
+          Remark: "SLA Rút tiền về ngân hàng không thành công",
+          Actions: [
+            "Inform Dax of sla",
+            "Log suggestions per recommendation",
+            "Inform user outcome accordingly",
+          ],
+          RootCauses: [
+            "T&C (eligibility/policies)",
+            "Policy blockers for certain actions",
+            "Dax made a large cash withdrawal",
+          ],
+        },
+      ],
+    },
+    {
       Category: "P4", // Thêm trường Category
       Type: "P4 Behaviour and Ethics::Merchant Behaviour, Shop or Order Details",
       ProblemLevels: {
@@ -2261,7 +2260,7 @@ export const data = {
           Actions: [
             "Advise Dax to cancel order/booking",
             "Advise user to report via Help Centre",
-            "Escalate to TM/TL",
+            "No further action taken L3",
           ],
           RootCauses: [
             "Risk/Quality",
@@ -2322,7 +2321,7 @@ export const data = {
           Actions: [
             "Check booking/transaction details",
             "Review contact history",
-            "Escalate to TM/TL",
+            "No further action taken L3",
           ],
           RootCauses: [
             "Risk/Quality",
