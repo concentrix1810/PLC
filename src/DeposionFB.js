@@ -215,6 +215,12 @@ const DeposionFB = () => {
     inputRef.current.focus(); // Set focus back to the input
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" && searchResults.length > 0) {
+      handleSelectResult(searchResults[0]); // Chọn kết quả đầu tiên
+    }
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -260,6 +266,7 @@ const DeposionFB = () => {
               onFocus={handleFocusInput}
               onBlur={handleBlurInput}
               onChange={(e) => handleSearch(e.target.value)}
+              onKeyDown={handleKeyDown}
             />
             {searchTerm && (
               <span className="clear-icon" onClick={clearSearch}>
