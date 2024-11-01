@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineClose, AiOutlineUp, AiOutlineSearch } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,8 +8,7 @@ import "./styles.css";
 const customToastStyle = {
   backgroundColor: "#00804a",
   color: "#fff",
-  padding: "6px", // Smaller padding
-  fontSize: "10px", // Smaller font size
+  fontSize: "12px", // Smaller font size
   borderRadius: "5px", // Adjust border radius if needed
 };
 
@@ -23,6 +22,8 @@ const DeposionFB = () => {
   const [displayMode, setDisplayMode] = useState("full"); // State for display mode
   const [typingText, setTypingText] = useState(""); // State để quản lý nội dung gõ
   const fullText = "Chúng tôi có thể giúp gì cho bạn?"; // Nội dung bạn muốn gõ
+
+  const inputRef = useRef(null);
 
   useEffect(() => {
     const history = JSON.parse(localStorage.getItem("searchHistory")) || [];
@@ -72,6 +73,7 @@ const DeposionFB = () => {
           position: "top-left",
           autoClose: 1000,
           hideProgressBar: true,
+          closeButton: false,
           style: customToastStyle,
         });
       })
@@ -206,11 +208,11 @@ const DeposionFB = () => {
       setShowHistory(false);
     }, 100);
   };
-
   const clearSearch = () => {
     setSearchTerm("");
     setSearchResults([]);
     setShowHistory(true);
+    inputRef.current.focus(); // Set focus back to the input
   };
 
   const scrollToTop = () => {
@@ -251,6 +253,7 @@ const DeposionFB = () => {
           <div className="input-container">
             <AiOutlineSearch className="search-icon" />
             <input
+              ref={inputRef}
               type="text"
               placeholder="Tìm kiếm theo Top Disposition & Remark"
               value={searchTerm}
